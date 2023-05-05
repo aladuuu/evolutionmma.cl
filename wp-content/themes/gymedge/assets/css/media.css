@@ -1,0 +1,11 @@
+.boton-inicio {
+    margin-top: 47%;
+}
+@media (max-width: 768px) {
+    .chao-texto {
+        display: none;
+    }
+    .boton-inicio {
+        margin-top: 40%;
+    }
+  }
