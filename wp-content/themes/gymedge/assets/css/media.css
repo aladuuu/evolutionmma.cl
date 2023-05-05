@@ -1,11 +1,17 @@
 .boton-inicio {
     margin-top: 47%;
 }
+.tamano {
+    width: 350px;
+}
 @media (max-width: 768px) {
     .chao-texto {
         display: none;
     }
     .boton-inicio {
         margin-top: 40%;
+    }
+    .tamano {
+        width: 100%;
     }
   }
