@@ -16,6 +16,13 @@
     left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 10px;
+    border: 2px solid #ffc300;
+}
+
+.img-clases {
+    border-radius: 10px;
+    border: 2px solid #ffc300;
 }
 @media (max-width: 768px) {
     .chao-texto {
