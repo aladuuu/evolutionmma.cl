@@ -19,11 +19,29 @@
     border-radius: 10px;
     border: 2px solid #ffc300;
 }
-
 .img-clases {
     border-radius: 10px;
     border: 2px solid #ffc300;
 }
+#current-image { 
+    width: 100%;
+    border-radius: 10px;
+    border: solid 2px #ffc300;
+  } 
+  #image-thumbs { 
+    margin-top: 20px;
+  }
+  .thumb { 
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: solid 1px #ffc300;
+  }
 @media (max-width: 768px) {
     .chao-texto {
         display: none;
@@ -33,5 +51,8 @@
     }
     .tamano {
         width: 100%;
+    }
+    .thumbs-al-medio-mobile {
+        margin-left: 20px;
     }
   }
