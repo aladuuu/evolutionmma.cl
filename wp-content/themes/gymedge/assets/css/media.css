@@ -56,3 +56,13 @@
         margin-left: 20px;
     }
   }
+  .gallery-item {
+    margin-bottom: 15px;
+    height: 100px;
+    overflow: hidden;
+  }
+@media (max-width: 576px) {
+    .gallery-item {
+        height: 200px;
+      }
+}
