@@ -62,4 +62,18 @@
   overflow: hidden;
   zoom: 65%;
 }
-
+.boton-compra {
+  border: #ffc300 1px solid;
+  padding: 3px 9px;
+  border-radius: 5px;
+}
+.boton-compra:hover {
+  background-color: #ffc300;
+  color: white;
+}
+.col {
+  margin-bottom: 20px;
+}
+.entry-banner-store {
+  background: url(/wp-content/uploads/2023/store.jpg) no-repeat scroll center center / cover;
+}
