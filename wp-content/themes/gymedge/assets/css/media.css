@@ -119,7 +119,10 @@
   border: #ffc300 1px solid!important;
   outline: #ffc300;
 }
-
+.imagen-calendario {
+  border-radius: 5px;
+  border: #ffc300 1px solid;
+}
 /* Desktop */
 @media screen and (min-width: 992px) {
   .imagen-calendario {
