@@ -63,9 +63,13 @@
   zoom: 65%;
 }
 .boton-compra {
+  background-color: white;
+  color: #ffc300;
   border: #ffc300 1px solid;
-  padding: 3px 9px;
-  border-radius: 5px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 .boton-compra:hover {
   background-color: #ffc300;
@@ -74,6 +78,77 @@
 .col {
   margin-bottom: 20px;
 }
+.borde-amarillo {
+  border: #ffc300 1px solid!important;
+}
 .entry-banner-store {
   background: url(/wp-content/uploads/2023/store.jpg) no-repeat scroll center center / cover;
+}
+.margen-abajo-20 {
+  margin-bottom: 20px;
+}
+.control-galeria button{
+  border: #ffc300 1px solid;
+  border-radius: 5px;
+  font-size: small;
+  text-transform: uppercase;
+}
+.control-galeria button:hover{
+  color: white;
+  background-color: #ffc300;
+}
+.control-galeria button:focus{
+  border: #ffc300 1px solid!important;
+  color: white;
+  background-color:#ffc300;
+  outline: #ffc300!important;
+}
+.control-galeria button:active{
+  border: #ffc300 1px solid!important;
+  color: white;
+  background-color: #ffc300;
+}
+.control-galeria input{
+  border: #ffc300 1px solid;
+  border-radius: 5px;
+  outline: #ffc300;
+  width: 100%;
+  padding: 0 5px;
+}
+.control-galeria input:focus{
+  border: #ffc300 1px solid!important;
+  outline: #ffc300;
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+  .imagen-calendario {
+    display: none; /* Hide the image for desktop screens */
+  }
+  
+  .large-imagen-calendario {
+    display: block; /* Show the large image */
+  }
+}
+
+/* Medium screens */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+  .imagen-calendario {
+    display: none; /* Hide the image for medium screens */
+  }
+  
+  .medium-imagen-calendario {
+    display: block; /* Show the medium image */
+  }
+}
+
+/* Smartphones */
+@media screen and (max-width: 575px) {
+  .imagen-calendario {
+    display: none; /* Hide the image for smartphones */
+  }
+  
+  .small-imagen-calendario {
+    display: block; /* Show the small image */
+  }
 }
