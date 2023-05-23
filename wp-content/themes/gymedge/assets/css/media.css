@@ -56,12 +56,7 @@
         margin-left: 20px;
     }
   }
-.gallery-item {
-  margin-bottom: 15px;
-  height: 125px;
-  overflow: hidden;
-  zoom: 65%;
-}
+
 .boton-compra {
   background-color: white;
   color: #ffc300;
@@ -154,4 +149,8 @@
   .small-imagen-calendario {
     display: block; /* Show the small image */
   }
+}
+.img-galeria {
+  border: #ffc300 1px solid;
+  border-radius: 5px;
 }
