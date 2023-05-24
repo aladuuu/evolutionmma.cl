@@ -154,3 +154,18 @@
   border: #ffc300 1px solid;
   border-radius: 5px;
 }
+/* Estilos para el div visible solo en smartphones */
+@media only screen and (max-width: 767px) {
+  #div-desktop {
+    display: none;
+  }
+}
+/* Estilos para el div visible en dispositivos de escritorio */
+@media only screen and (min-width: 768px) {
+  #div-smartphone {
+    display: none;
+  }
+}
+.box {
+  background-color: white;
+}
