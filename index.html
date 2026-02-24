@@ -88,6 +88,381 @@
 
 <link rel="stylesheet" href="wp-content/plugins/LayerSlider/static/layerslider/skins/v6/skin.css" type="text/css">
 
+<style>
+.sucursales-section {
+    background: linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%);
+    padding: 70px 0 40px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow: hidden;
+}
+
+.sucursales-section.vc_row {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+.sucursales-section > .wpb_column {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sucursales-section > .wpb_column > .vc_column-inner {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sucursales-section .section-title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sucursales-divider {
+    width: 90px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 999px;
+    background: #ffc300;
+}
+
+.sucursales-intro {
+    max-width: 760px;
+    margin: 0 auto 30px;
+    text-align: center;
+    color: #555;
+    line-height: 1.6;
+}
+
+.sucursal-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ececec;
+    border-top: 4px solid #ffc300;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 30px;
+    min-height: 260px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.sucursal-ribbon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    min-width: 72px;
+    text-align: center;
+    background: #111;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+}
+
+.sucursal-ribbon.is-new {
+    background: #ffc300;
+    color: #111;
+}
+
+.sucursal-card > .sucursal-ribbon + h3 {
+    padding-right: 98px;
+}
+
+.sucursal-card h3 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.sucursal-address {
+    margin-bottom: 12px;
+    color: #222;
+    font-weight: 600;
+}
+
+.sucursal-address i,
+.sucursal-detail i {
+    color: #ffc300;
+    margin-right: 8px;
+}
+
+.sucursal-detail {
+    color: #555;
+    margin-bottom: 18px;
+}
+
+.sucursal-map {
+    margin: 0 0 18px;
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.sucursal-map iframe {
+    display: block;
+    width: 100%;
+    height: 220px;
+    border: 0;
+}
+
+.sucursal-actions a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 2px solid #ffc300;
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.sucursal-actions a:hover {
+    background: #ffc300;
+    color: #111;
+}
+
+.sucursal-actions .sucursal-btn-primary {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+}
+
+.sucursal-actions .sucursal-btn-primary:hover {
+    background: #ffc300;
+    border-color: #ffc300;
+    color: #111;
+}
+
+.home-contact-summary {
+    background: linear-gradient(180deg, #ffffff 0%, #fafcfe 100%);
+    border: 1px solid #eceff4;
+    border-top: 4px solid #ffc300;
+    border-radius: 12px;
+    padding: 26px;
+    margin-bottom: 50px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.home-contact-summary h3 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.home-contact-summary > p {
+    margin: 0 0 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.home-contact-branches {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.home-contact-branch {
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    background: #fff;
+    padding: 14px 14px 12px;
+}
+
+.home-contact-branch h4 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.home-contact-branch p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.home-contact-branch i {
+    color: #ffc300;
+    margin-right: 6px;
+}
+
+.home-contact-meta {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.home-contact-meta li {
+    margin-bottom: 8px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.home-contact-meta li:last-child {
+    margin-bottom: 0;
+}
+
+.home-contact-meta i {
+    color: #ffc300;
+    margin-right: 8px;
+}
+
+.home-contact-meta a {
+    color: #111;
+    text-decoration: none;
+}
+
+.home-contact-meta a:hover {
+    color: #ffc300;
+}
+
+.home-contact-note {
+    margin: 14px 0 0;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.home-contact-actions {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.home-contact-actions a {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 2px solid #ffc300;
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.home-contact-actions a:hover {
+    background: #ffc300;
+    color: #111;
+}
+
+.home-contact-actions .is-primary {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+}
+
+.home-contact-actions .is-primary:hover {
+    background: #ffc300;
+    border-color: #ffc300;
+    color: #111;
+}
+
+#contacto .vc_custom_heading {
+    text-align: center !important;
+}
+
+.home-contact-title-col,
+.home-contact-form-column {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-contact-form-column > .vc_column-inner > .wpb_wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.home-contact-form-column .wpcf7 {
+    background: linear-gradient(180deg, #ffffff 0%, #fafcfe 100%);
+    border: 1px solid #eceff4;
+    border-top: 4px solid #ffc300;
+    border-radius: 12px;
+    padding: 24px 22px 4px;
+    margin-bottom: 40px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.home-contact-form-column .wpcf7 .screen-reader-response {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .sucursales-section {
+        padding: 50px 0 20px;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .sucursal-card {
+        padding: 22px;
+        min-height: 0;
+    }
+
+    .sucursal-card h3 {
+        font-size: 24px;
+    }
+
+    .sucursal-map iframe {
+        height: 200px;
+    }
+
+    .sucursal-actions a {
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .sucursal-ribbon {
+        top: 14px;
+        right: 14px;
+        min-width: 68px;
+        font-size: 10px;
+        padding: 7px 10px;
+    }
+
+    .sucursal-card > .sucursal-ribbon + h3 {
+        padding-right: 86px;
+    }
+
+    .home-contact-summary {
+        padding: 20px;
+    }
+
+    .home-contact-summary h3 {
+        font-size: 24px;
+    }
+
+    .home-contact-branches {
+        grid-template-columns: 1fr;
+    }
+
+    .home-contact-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-contact-form-column > .vc_column-inner > .wpb_wrapper {
+        max-width: 100%;
+    }
+
+    .home-contact-form-column .wpcf7 {
+        padding: 18px 16px 2px;
+    }
+}
+</style>
+
 </head>
 <body class="home page-template-default page page-id-1873 do-etfw wls_unknown header-style-2 no-sidebar product-grid-view wpb-js-composer js-comp-ver-5.6 vc_responsive non-stick">
 <div class="ls-wp-container fitvidsignore ls-hidden ls-v6 ls-container ls-fullwidth" data-layerslider-uid="LS2yr4jdt1t"><div class="ls-slide" data-ls="duration:5000;transition2d:5;kenburnsscale:1.2;" style="width: 1280px; height: 800px;"></div></div>
@@ -139,6 +514,11 @@
                                     <li id="menu-item-2201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2201">
                                         <a href="/store/index.html">
                                             Tienda
+                                        </a>
+                                    </li>
+                                    <li id="menu-item-3201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3201">
+                                        <a href="/index.html#sucursales">
+                                            Sucursales
                                         </a>
                                     </li>
                                     <li id="menu-item-2200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2200">
@@ -603,15 +983,87 @@
 <div class="col-lg-6 col-md-6 col-sm-6"><div class="rt-right" style="left:-110px;"><div class="rt-right-content"><div>TIENDA</div><p style="font-size: 40px;">EVOLUTION<span class="gym-primary-color">MMA</span></p> <a href="/store/index.html" class="btn rt-button">VISITAR TIENDA</a></div></div></div></div></div></div></div></div></div>
 
 <div class="vc_row-full-width vc_clearfix"></div>
-                                                                
-<div id="contacto" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-5"><div class="vc_column-inner"><div class="wpb_wrapper"><h2 style="font-size: 32px;color: #000000;text-align: left" class="vc_custom_heading">Contacto</h2></div></div></div>
 
-<div class="wpb_column vc_column_container vc_col-sm-7"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div>
+<div id="sucursales" class="vc_row wpb_row vc_row-fluid sucursales-section">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 class="owl-custom-nav-title" style="float:none; display:inline-block;">SUCURSALES</h2>
+                        <div class="sucursales-divider"></div>
+                    </div>
+                    <p class="sucursales-intro">
+                        Además de nuestra sucursal de Camino Mirasol, ahora también contamos con sucursal en Peñalolén.
+                        Elige la ubicación que más te acomode y contáctanos para agendar tu evaluación.
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="sucursal-card">
+                                <h3>Camino Mirasol</h3>
+                                <p class="sucursal-address">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>Camino Mirasol 1555, Las Condes
+                                </p>
+                                <p class="sucursal-detail">
+                                    <i class="fa fa-home" aria-hidden="true"></i>Sede Evolution MMA
+                                </p>
+                                <div class="sucursal-map">
+                                    <iframe
+                                        title="Mapa sucursal Camino Mirasol"
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        src="https://www.google.com/maps?q=Camino+Mirasol+1555,+Las+Condes,+Chile&amp;output=embed">
+                                    </iframe>
+                                </div>
+                                <div class="sucursal-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Camino+Mirasol+1555%2C+Las+Condes%2C+Chile" target="_blank" rel="noopener">
+                                        CÓMO LLEGAR
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="sucursal-card">
+                                <span class="sucursal-ribbon is-new">Nuevo</span>
+                                <h3>Las Parcelas</h3>
+                                <p class="sucursal-address">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>Las Parcelas 8646, Peñalolén
+                                </p>
+                                <p class="sucursal-detail">
+                                    <i class="fa fa-star" aria-hidden="true"></i>Centro Deportivo Evolution
+
+                                </p>
+                                <div class="sucursal-map">
+                                    <iframe
+                                        title="Mapa sucursal Las Parcelas Peñalolén"
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        src="https://www.google.com/maps?q=Las+Parcelas+8646,+Pe%C3%B1alol%C3%A9n,+Chile&amp;output=embed">
+                                    </iframe>
+                                </div>
+                                <div class="sucursal-actions">
+                                    <a class="sucursal-btn-primary" href="/sucursales/centro-deportivo-evolution/index.html">
+                                        VER MÁS
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Las+Parcelas+8646%2C+Pe%C3%B1alol%C3%A9n%2C+Chile" target="_blank" rel="noopener">
+                                        CÓMO LLEGAR
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contacto" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12 home-contact-title-col"><div class="vc_column-inner"><div class="wpb_wrapper"><h2 style="font-size: 32px;color: #000000;text-align: center" class="vc_custom_heading">Contacto</h2></div></div></div></div>
                                                               
 <div class="vc_row wpb_row vc_row-fluid">
     
     
-<div class="wpb_column vc_column_container vc_col-sm-5"><div class="vc_column-inner"><div class="wpb_wrapper"><div role="form" class="wpcf7" id="wpcf7-f1929-p1873-o1" lang="en-US" dir="ltr"><div class="screen-reader-response"></div>
+<div class="wpb_column vc_column_container vc_col-sm-12 home-contact-form-column"><div class="vc_column-inner"><div class="wpb_wrapper"><div role="form" class="wpcf7" id="wpcf7-f1929-p1873-o1" lang="en-US" dir="ltr"><div class="screen-reader-response"></div>
 
 <div>
         <form>
@@ -638,9 +1090,9 @@
 
 </div>
 
-<div class="wpb_column vc_column_container vc_col-sm-7"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="wpb_gmaps_widget wpb_content_element"><div class="wpb_wrapper"><div class="wpb_map_wraper"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.899606281264!2d-70.52905540000002!3d-33.39978329999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cea0d0cf72c3%3A0xad408c85c78a5359!2sCamino%20Mirasol%201555%2C%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1683219401470!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><noscript>&lt;iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.899606281264!2d-70.52905540000002!3d-33.39978329999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cea0d0cf72c3%3A0xad408c85c78a5359!2sCamino%20Mirasol%201555%2C%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1683219401470!5m2!1ses-419!2scl" width="600" height="450" frameborder="0" style="border:0" allowfullscreen&gt;&lt;/iframe&gt;</noscript></div></div></div></div></div></div></div></div></article></main></div></div></div></div></div><footer><div class="footer-top-area"><div class="container"><div class="row"><div class="col-sm-6 col-xs-12"><div id="gymedge_about-2" class="widget widget_gymedge_about"><h3 class="widgettitle">Evolution MMA</h3><p>Escuela de Artes Marciales que coloca énfasis tanto en la formación técnica como espiritual de sus alumnos, con foco en formar mejores personas.</p><div class="footer-social-media-area"><ul><li><a href="https://www.facebook.com/humberto.n.zarate/" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://www.instagram.com/humberto_norambuena/" target="_blank"><i class="fa fa-instagram"></i></a></li></ul></div></div></div>
+</div></div></div></div></div></div></article></main></div></div></div></div></div><footer><div class="footer-top-area"><div class="container"><div class="row"><div class="col-sm-6 col-xs-12"><div id="gymedge_about-2" class="widget widget_gymedge_about"><h3 class="widgettitle">Evolution MMA</h3><p>Escuela de Artes Marciales que coloca énfasis tanto en la formación técnica como espiritual de sus alumnos, con foco en formar mejores personas.</p><div class="footer-social-media-area"><ul><li><a href="https://www.facebook.com/humberto.n.zarate/" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://www.instagram.com/humberto_norambuena/" target="_blank"><i class="fa fa-instagram"></i></a></li></ul></div></div></div>
                                                                         
-<div class="col-sm-6 col-xs-12"><div id="gymedge_address-2" class="widget widget_gymedge_address"><h3 class="widgettitle">Contacto</h3><ul><li><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Camino Mirasol 1555, Las Condes</li><li><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+56964341938">+56964341938</a></li><li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:contacto@evolutionmma.cl">contacto@evolutionmma.cl</a></li></ul></div></div></div></div></div>
+<div class="col-sm-6 col-xs-12"><div id="gymedge_address-2" class="widget widget_gymedge_address"><h3 class="widgettitle">Contacto</h3><ul><li><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Camino Mirasol 1555, Las Condes</li><li><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Las Parcelas 8646, Peñalolén</li><li><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:+56964341938">+56964341938</a></li><li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:contacto@evolutionmma.cl">contacto@evolutionmma.cl</a></li></ul></div></div></div></div></div>
                                                                         
 <div class="footer-bottom-area"><div class="container"><div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="footer-bottom"><p>© Copyright 2023 Evolution MMA. Humberto Norambuena</p></div></div></div></div></div></footer></div>
 
